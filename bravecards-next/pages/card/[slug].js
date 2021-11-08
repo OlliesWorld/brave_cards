@@ -1,6 +1,6 @@
-import Image from "next/image"
+import Image from '../../components/Image'
 import { sanityClient } from "../../sanity"
-
+import Link from 'next/link'
 
 const Card = ({ 
         name,
@@ -21,13 +21,14 @@ const Card = ({
      return (
 
         <div className="pb-4 bg-blue-400">
+          <Link href="/">Back</Link>
         <div className="text-center">
             <h1 className="text-4xl">{name}</h1>
             <p>( {type} )</p>
             <p>Alias: <span>{alias}</span></p>
         </div>
         <div className="">
-            <Image src={mainImage} alt={name} width={250} height={250}/>
+        <Image identifier="main-image" image={mainImage} alt="This is a Rebel Girl"/>
             {/* <div className="sub-images-section">
                  {images.map((_key, image) => <Image  key={_key} identifier="image" image={image}/>)}
               </div> */}
