@@ -8,16 +8,16 @@ const Card = ({
         origin,
         type,
         power,
-        thewhy,
+        theWhy,
         quotes,
         mainImage,
         images,
         reign,
         links,
         creator,
-        src
+       
  }) => {
-    //  console.log(quotes)
+    //  console.log(theWhy)
      return (
 
         <div className="pb-4 bg-blue-400">
@@ -39,8 +39,8 @@ const Card = ({
             <div className="reign">Reign: <span>{reign}</span></div>
             
         </div>
-        <div className="text-center mb-4">
-            <div><span className="font-bold">The Why: </span>{thewhy}</div>
+        <div className="text-center mb-4 w-half">
+            <div><span className="font-bold">The Why: </span><div>{theWhy}</div></div>
             {/* <a href='{resourceLink1}' target="_blank">Link #1</a> */}
         </div>
         <div className="relative m-4 border-2 border-purple pb-4 w-3/4 m-auto">
@@ -53,7 +53,7 @@ const Card = ({
               <div>{quotes.quote4}</div>
             </div>
         </div>
-        <div>{creator}</div>
+        <div className="text-xl text-red">Made by: {creator?.name}</div>
         </div>
     )
 }
@@ -66,7 +66,7 @@ export const getServerSideProps = async (pageContext) => {
         origin,
         type,
         power,
-        thewhy,
+        theWhy,
         quotes,
         mainImage,
         images,
@@ -97,7 +97,7 @@ export const getServerSideProps = async (pageContext) => {
           origin: card.origin,
           type: card.type,
           power:  card.power,
-          thewhy: card.thewhy,
+          theWhy: card.theWhy,
           quotes: card.quotes,
           mainImage: card.mainImage,
           images: card.images,

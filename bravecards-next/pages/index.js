@@ -1,4 +1,4 @@
-import { sanityClient, urlFor } from '../sanity'
+import { sanityClient } from '../sanity'
 import Link from 'next/link'
 import Image from '../components/Image'
 
@@ -13,12 +13,12 @@ const Home = ({cards, src}) => {
           <h1 className="text-4xl">These Women inspire me to be BRAVE!</h1>
         </div>
         
-        <div className="grid grid-cols-3 justify-items-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {cards.map((card) => (
             <Link key={card._id} href={`card/${card.slug.current}`} passHref target="_blank">
               <div  className="max-w-md rounded overflow-hidden shadow-lg mb-4 bg-white">
                 <div >
-                <Image src={urlFor(card.mainImage)} alt="This is a Rebel Girl"/>
+                <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl"/>
                 
                 <div className="relative w-12 h-12 bg-purple-100 rounded-full flex justify-center items-center text-center p-5 shadow-xl -mt-16 ml-2">
                   
