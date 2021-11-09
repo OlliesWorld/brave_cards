@@ -25,4 +25,29 @@ a {
   height: 25rem;
   width: 22rem;
   margin: 0 auto;
+  border-radius: 10px;
+}
+
+.card{
+  cursor: pointer;
+  width: 340px;
+  height:480px;
+}
+.front, .back{
+  width:340px;
+  height: 480px;
+  overflow:hidden;
+  backface-visibility:hidden;
+  position:absolute;
+  transition: transform .5s linear;
+}
+.card:hover > .front{
+  transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+  transform: perspective(600px) rotateY(0deg);
+}
+.back{
+  background: whitesmoke;
+  transform:rotateY(180deg);
 }
