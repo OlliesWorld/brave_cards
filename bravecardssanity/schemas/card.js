@@ -38,7 +38,7 @@ export default {
         },
        
             {
-                name: 'thewhy',
+                name: 'theWhy',
                 title: 'The Why',
                 type: 'string',
             },
@@ -126,7 +126,7 @@ export default {
                 ]
             },
             {
-                name: 'Creator',
+                name: 'creator',
                 title: 'Creator',
                 type: 'creator',
                 
