@@ -8,9 +8,10 @@ const Home = ({cards, src}) => {
   return (
     <> 
     {cards && (
-      <div className="main bg-purple-700 pt-4">
+      <div className="main  pt-4">
+       
         <div className="header my-4 text-center">
-          <h1 className="text-6xl">These Women inspire me to be (creator word)</h1>
+          <h1 className="text-6xl">These Women inspire Me</h1>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
