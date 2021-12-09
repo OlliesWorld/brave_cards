@@ -1,6 +1,6 @@
 import { sanityClient } from '../sanity'
 import Link from 'next/link'
-import Image from '../components/Image'
+import Image from '../Components/Image'
 
 
 const Home = ({cards, src}) => {
@@ -11,7 +11,8 @@ const Home = ({cards, src}) => {
       <div className="main  pt-4">
        
         <div className="header my-4 text-center">
-          <h1 className="text-6xl">These Women inspire Me</h1>
+          <h2 className="text-6xl">These Women are inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
+        <h4>Click on a card to learn more about each person!</h4>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
@@ -27,7 +28,7 @@ const Home = ({cards, src}) => {
                   {card.type}
                 </div>
                 </div >
-              <div className="px-6 py-2 mt-4 bg-blue-700">
+              <div className="px-6 py-2 mt-4 bg-blue-900">
                 <div className="font-bold text-2xl mb-2 text-center">{card.alias}</div>
                 <div className="flex justify-center space-x-4">
                   <div>{card.power}</div>
@@ -36,7 +37,7 @@ const Home = ({cards, src}) => {
               </div>
               </div>
               <div  className="back max-w-md rounded overflow-hidden shadow-lg mb-4 bg-white">
-              <div className="px-6  mt-4 bg-blue-400">
+              <div className="px-6  mt-4 bg-blue-900">
                 <div className="font-bold text-2xl mb-2 text-center">{card.name}</div>
                 <div className="">
                   <div>Power: {card.power}</div>
