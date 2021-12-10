@@ -3,7 +3,7 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   future: {
-    webpack5: true,
+    webpack5: false,
   },
   reactStrictMode: true,
   target: "serverless",

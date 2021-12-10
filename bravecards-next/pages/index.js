@@ -10,28 +10,29 @@ const Home = ({cards, src}) => {
     {cards && (
       <div className="main  pt-4">
        
-        <div className="header my-4 text-center">
-          <h2 className="text-6xl">These Women are inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
+        <div className="header my-4 text-center text-blue-900 font-extrabold">
+          <h2 >These Women are </h2>
+          <h2 className="text-6xl">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
         <h4>Click on a card to learn more about each person!</h4>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {cards.map((card) => (
             <Link key={card._id} href={`card/${card.slug.current}`} passHref target="_blank">
-              <div  className="card max-w-md rounded overflow-hidden shadow-lg mb-4 bg-white cursor-pointer">
-                <div className="front">
-                <div >
-                <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl"/>
-                
-                <div className="relative w-12 h-12 bg-yellow-400 rounded-full flex justify-center items-center text-center p-5 shadow-xl -mt-16 ml-2">
+              <div  className="card  rounded-lg overflow-hidden shadow-lg mb-4 bg-white cursor-pointer">
+                <div className="front rounded-lg">
+                <div className="">
+                <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className="h-40 rounded-lg overflow-hidden" layout="intrinsic"/>
+                </div>
+                <div className="relative w-12 h-12 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-16 ml-2">
                   
                   {card.type}
-                </div>
+                
                 </div >
-              <div className="px-6 py-2 mt-4 bg-blue-900">
+              <div className="rounded-bl-lg rounded-br-lg  px-2 py-2 mt-4 bg-blue-900">
                 <div className="font-bold text-2xl mb-2 text-center">{card.alias}</div>
                 <div className="flex justify-center space-x-4">
-                  <div>{card.power}</div>
+                  <div >{card.power}</div>
                   <div>{card.reign}</div>
                 </div>
               </div>

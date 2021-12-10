@@ -47,21 +47,21 @@ a {
 * {
   box-sizing: border-box;
 }
-.main-image img {
+/* .main-image img {
   height: 25rem;
   width: 22rem;
   margin: 0 auto;
   border-radius: 10px;
-}
+} */
 
 .card{
   cursor: pointer;
-  width: 340px;
-  height:480px;
+  width: 300px;
+  height: 368px;
 }
 .front, .back{
-  width:340px;
-  height: 480px;
+  width:300px;
+  height: 368px;
   overflow:hidden;
   backface-visibility:hidden;
   position:absolute;
