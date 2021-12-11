@@ -47,12 +47,10 @@ a {
 * {
   box-sizing: border-box;
 }
-/* .main-image img {
-  height: 25rem;
-  width: 22rem;
-  margin: 0 auto;
-  border-radius: 10px;
-} */
+.main-image img {
+  height: 18rem;
+ 
+}
 
 .card{
   cursor: pointer;
