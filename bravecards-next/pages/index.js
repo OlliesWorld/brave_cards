@@ -22,7 +22,7 @@ const Home = ({cards, src}) => {
               <div  className="card  rounded-lg overflow-hidden shadow-lg mb-4 bg-white cursor-pointer">
                 <div className="front rounded-lg">
                 <div className="h-72">
-                <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" sizes="50vw"/>
+                <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" sizes="50vh"/>
                 </div>
                 <div className="relative w-12 h-12 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-16 ml-2">
                   
