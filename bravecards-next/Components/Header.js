@@ -1,12 +1,11 @@
 import Link from "next/link";
 // import { useContext } from "react";
 
-// import AuthContext from "../context/AuthContext";
-// import UploadModal from "./uploadModal";
+
 
 export default function Header() {
 
-    // const { user } = useContext(AuthContext)
+
     return (
         <div className="w-full grid grid-cols-2 justify-center items-center py-4 text-center bg-blue-900">
             <div>
@@ -15,23 +14,11 @@ export default function Header() {
                 </Link>
                 <h2 className="text-2xl text-blue-50">When you need inspiration!</h2>
             </div>
+            <div className="">
+            <Link href="/gallery"><a className="text-2xl text-blue-50 hover:underline hover:bg-green-900 p-6 mr-4">Gallery</a></Link>
             
-            
-            {/* <div className="text-purple-50">{user ? (
-                <div >
-                    
-                <Link href="/account" >
-                    <a className="mr-6">{user.email}</a>
-                </Link>
-                <UploadModal />
-                </div>
-            ) : (
-                <Link href="/login">
-                    <a>Login</a></Link>
-            )}
-                </div>
-             */}
-            <Link  href="/contact" ><a className="text-xl text-blue-50 hover:bg-blue-900 hover:text-2xl">Contact</a></Link>
+            <Link  href="/contact" ><a className="text-2xl text-blue-50 hover:underline hover:text-2xl">Contact</a></Link>
+            </div>
         </div>
     )
 }

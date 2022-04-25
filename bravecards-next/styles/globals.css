@@ -79,6 +79,23 @@ a {
 .card[type= 'fictional'] {
   background-color: red;
 }
+.swipe-container {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+ 
+  width: 400px;
+ 
+  height: 520px;
+}
+.swipe {
+  position: absolute;
+}
 
 /* @keyframes cube {
   from {

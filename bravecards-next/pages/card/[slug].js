@@ -43,7 +43,7 @@ const Card = ({
             <div><span className="font-bold">The Why: </span><div>{theWhy}</div></div>
             <a href='{resourceLink1}' target="_blank">Link #1</a>
         </div>
-        <div className="relative m-4 border-2 bg-blue-900 pb-4 w-3/4 m-auto">
+        <div className="relative  border-2 bg-blue-900 pb-4 w-3/4 m-auto">
        
             <div className="ml-8 pb-8">
               <h2 className="text-2xl text-center underline pb-3">Favorite quotes from {name}</h2>
