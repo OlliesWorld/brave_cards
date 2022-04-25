@@ -24,8 +24,8 @@ const Card = ({
           
         <div className="text-center">
             <h1 className="text-4xl">{name}</h1>
-            <p>( {type} )</p>
-            <p>Alias: <span>{alias}</span></p>
+            <p className='text-xl'>( {type} )</p>
+            <p className='text-xl'>Alias: <span>{alias}</span></p>
         </div>
         <div className="">
           <div className="bp-4">
@@ -33,28 +33,28 @@ const Card = ({
           
           </div>
           <div className="text-blue-900 font-extrabold text-center pb-8">
-              <div className="origin">Origin: <span>{origin}</span></div>
-              <div className="power">Power: <span>{power}</span></div>
-              <div className="reign">Reign: <span>{reign}</span></div>
+              <div className="origin ">Origin: <span className='text-xl'>{origin}</span></div>
+              <div className="power">Power: <span className='text-xl'>{power}</span></div>
+              <div className="reign">Reign: <span className='text-xl'>{reign}</span></div>
           
           </div>
         </div>
         <div className="text-center mb-4 w-2/3 m-auto pb-8">
-            <div><span className="font-bold">The Why: </span><div>{theWhy}</div></div>
+            <div><span className="font-bold">The Why: </span><div className='text-xl'>{theWhy}</div></div>
             <a href='{resourceLink1}' target="_blank">Link #1</a>
         </div>
         <div className="relative  border-2 bg-blue-900 pb-4 w-3/4 m-auto">
        
-            <div className="ml-8 pb-8">
+            <div className="ml-8 pb-8 text-blue-50">
               <h2 className="text-2xl text-center underline pb-3">Favorite quotes from {name}</h2>
-              <div>{quotes.quote1}</div>
-              <div>{quotes.quote2}</div>
-              <div>{quotes.quote3}</div>
-              <div>{quotes.quote4}</div>
+              <div className='text-xl'>{quotes.quote1}</div>
+              <div className='text-xl'>{quotes.quote2}</div>
+              <div className='text-xl'>{quotes.quote3}</div>
+              <div className='text-xl'>{quotes.quote4}</div>
             </div>
         </div>
 
-        <div className="sub-images-section m-auto w-1/2 h-1/2 pt-8">
+        <div className="grid grid-cols-2 m-auto w-1/2 h-1/2 pt-8">
                  {images.map(( image, _key) => <Image  key={_key} identifier="images" image={image} height={100} layout="intrinsic"/>)}
               </div>
         <div className="text-xl text-red">Card made by: {creator?.name}</div>
