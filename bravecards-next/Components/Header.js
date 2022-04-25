@@ -8,9 +8,9 @@ export default function Header() {
 
     return (
         <div className="w-full grid grid-cols-1 justify-center items-center py-4 text-center bg-blue-900">
-            <div>
+            <div className="text-5xl">
                 <Link href="/">
-                    <a className="text-blue-50 text-bold text-6xl">Brave_Cards</a>
+                    <a className="text-blue-50 text-bold ">Brave_Cards</a>
                 </Link>
                 {/* <h2 className="text-2xl text-blue-50">When you need inspiration!</h2> */}
             </div>
