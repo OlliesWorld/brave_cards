@@ -53,13 +53,9 @@ a {
   transform:rotateY(180deg);
 }
 
-.card[type= 'fictional'] {
-  background-color: red;
-}
-
 
 .card-container {
- 
+ margin: auto;
   width: 400px;
  
   height: 520px;

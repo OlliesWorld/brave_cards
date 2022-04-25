@@ -24,11 +24,11 @@ const Home = ({cards, src}) => {
           <h2 className="text-4xl uppercase">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
         <h4>Swipe for more!</h4>
         </div>
-    <div className="flex justify-center align-center ml-8">
-                <div className="card-container justify-center align-center">
+    <div className="flex justify-center align-center ml-16">
+        <div className="card-container ">
           {cards.map((card) => (
             
-            <TinderCard className='swipe mt-8' key={card.name} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
+            <TinderCard className='swipe mt-12 m-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
                             <div  className='card bg-blue-900 rounded-md shadow-lg'>
                                 <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
                             <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
@@ -41,7 +41,7 @@ const Home = ({cards, src}) => {
         </div>
         </div>
                  <div className="header m-auto text-center text-2xl text-blue-900 font-extrabold w-3/4 pb-4 ">This site is my passion project for learning about technologies and find inspiration from different people with different walks of life.</div>
-                 <div className="header m-auto text-center text-2xl text-blue-900 font-extrabold w-3/4 pb-4 "> Also help my nieces learn about what amazing humans Women are! My long-term goal is to make an app where users can sign up and add or create there own deck.</div>
+                 <div className="header m-auto text-center text-2xl text-blue-900 font-extrabold w-3/4 pb-4 "> Also to help my nieces learn about what amazing humans <span className='text-bold uppercase text-yellow-400'>Women </span>are! <br/> My long-term goal is to make an app where users can sign up and add or create there own deck.</div>
     </>
   )
 }
