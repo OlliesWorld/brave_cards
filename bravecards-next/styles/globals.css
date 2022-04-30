@@ -54,12 +54,7 @@ a {
 }
 
 
-.card-container {
- margin: auto;
-  width: 400px;
- 
-  height: 520px;
-}
+
 .swipe {
   position: absolute;
 }

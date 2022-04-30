@@ -24,11 +24,11 @@ const Home = ({cards, src}) => {
           <h2 className="text-4xl uppercase">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
         <h4>Swipe for more!</h4>
         </div>
-    <div className="flex justify-center align-center ml-16">
-        <div className="card-container ">
+    <div className="flex justify-center align-center ">
+        <div className="card-container w-[18rem] h-[420px] m-auto ">
           {cards.map((card) => (
             
-            <TinderCard className='swipe mt-12 m-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
+            <TinderCard className='swipe mt-2 m-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
                             <div  className='card bg-blue-900 rounded-md shadow-lg'>
                                 <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
                             <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
