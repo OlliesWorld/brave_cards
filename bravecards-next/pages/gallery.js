@@ -14,7 +14,7 @@ const Home = ({cards, src}) => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {cards.map((card) => (
-            <Link key={card._id} href={`card/${card.slug.current}`} passHref target="_blank">
+            <Link key={card._id} href={`card/${card.slug.current}`} passHref >
               <div  className="card  rounded-lg overflow-hidden shadow-lg mb-4 bg-white cursor-pointer">
                 <div className="front rounded-lg">
                 <div className="h-72">

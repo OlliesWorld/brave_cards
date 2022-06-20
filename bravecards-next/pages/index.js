@@ -1,8 +1,9 @@
 import { sanityClient } from '../sanity'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Image from '../Components/Image'
 import TinderCard from 'react-tinder-card'
-import { useState } from 'react'
+import React, { useState } from 'react'
+
 
 
 const Home = ({cards, src}) => {
@@ -25,18 +26,18 @@ const Home = ({cards, src}) => {
         <h4>Swipe for more!</h4>
         </div>
     <div className="flex justify-center align-center ">
-        <div className="card-container w-[18rem] h-[420px] m-auto ">
+        <div className="card-container w-[18rem] h-[450px] m-auto ">
           {cards.map((card) => (
-            
+           
             <TinderCard className='swipe mt-2 m-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
                             <div  className='card bg-blue-900 rounded-md shadow-lg'>
                                 <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
                             <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
                             <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-14 ml-56">{card.type}</div >
-                            <Link key={card._id} href={`/card/${card.slug.current}`} passHref target="_blank" ><a className='text-blue-50 text-xl ml-2 cursor-pointer'>More Info</a></Link>
+                            <a key={card._id} href={`/card/${card.slug.current}`} className='text-blue-50 text-xl ml-6' >info here</a>
                     </div>
                 </TinderCard>
-                 
+                            
                  ))}
         </div>
         </div>
@@ -45,6 +46,7 @@ const Home = ({cards, src}) => {
     </>
   )
 }
+
 
 export default Home
 
