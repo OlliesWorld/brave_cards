@@ -17,10 +17,9 @@ const Card = ({
         reign,
         links,
         creator,
-       
  }) => {
-    //  console.log(images)
-    console.log(links.resourceLink1)
+    //  console.log(images.caption)
+    // console.log(links.resourceLink1)
      return (
 
         <div className="pb-4 bg-blue-50">
@@ -45,7 +44,7 @@ const Card = ({
             </div>
               <div className="flex flex-col lg:flex-row justify-center gap-4 ">
                    {images.map(( image, _key) => <Image  key={_key} identifier="images" image={image} width={500}
-        height={500} layout="intrinsic" alt="women of inspiration" />)}
+        height={500} layout="intrinsic" alt={image.caption} />)}
               </div>
               
           </div>
@@ -94,6 +93,7 @@ export const getServerSideProps = async (pageContext) => {
         images,
         reign,
         links,
+      
         creator-> {
             _id,
             name,
