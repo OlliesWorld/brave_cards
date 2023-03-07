@@ -26,7 +26,7 @@ export default {
                 list: [
                     {title: 'Real', value: 'real'},
                     {title: 'Fictional', value: 'fictional'},
-                    {title: 'Fantasy', value: 'fantasy' },
+                    // {title: 'Fantasy', value: 'fantasy' },
                 ],
                 layout: 'radio',
             },
@@ -69,14 +69,6 @@ export default {
                     },
                 ]
             },
-
-            // {
-            //     name: 'quotes',
-            //     title: 'Quotes',
-            //     type: 'array',
-            //     of: [{type: "block"}],
-                
-            //   },
             {
                 name: 'mainImage',
                 title: 'Main Image',
@@ -97,12 +89,6 @@ export default {
                 type: 'string',
                 description: 'time period of Inspiration'
             },
-            
-            {
-                name: 'links',
-                title: 'Links',
-                type: 'document',
-                fields: [
                     {
                         name: 'resourceLink1',
                         title: 'Resource Link 1',
@@ -123,8 +109,7 @@ export default {
                         title: 'Resource Link 4',
                         type: 'url',
                     },
-                ]
-            },
+            
             {
                 name: 'creator',
                 title: 'Creator',

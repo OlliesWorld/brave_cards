@@ -1,9 +1,11 @@
 import { sanityClient } from '../sanity'
-// import Link from 'next/link'
 import Image from '../Components/Image'
-import TinderCard from 'react-tinder-card'
+// import TinderCard from 'react-tinder-card'
 import React, { useState } from 'react'
-
+import dynamic from "next/dynamic"
+const TinderCard = dynamic(() => import('react-tinder-card'), {
+  ssr: false
+});
 
 
 const Home = ({cards, src}) => {
@@ -11,12 +13,12 @@ const Home = ({cards, src}) => {
   const [lastDirection, setLastDirection] = useState()
 
   const swiped = (direction, nameToDelete) => {
-      console.log('removing: ' + nameToDelete)
+      // console.log('removing: ' + nameToDelete)
       setLastDirection(direction)
   }
 
   const outOfFrame = (name) => {
-      console.log(name + ' left the screen!')
+      // console.log(name + ' left the screen!')
   }
   return (
     <> 
@@ -30,7 +32,7 @@ const Home = ({cards, src}) => {
           {cards.map((card) => (
            
             <TinderCard className='swipe mt-2 m-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
-                            <div  className='card bg-blue-900 rounded-md shadow-lg'>
+                            <div  className='card bg-blue-900 -m-4 rounded-md shadow-lg'>
                                 <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
                             <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
                             <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-14 ml-56">{card.type}</div >

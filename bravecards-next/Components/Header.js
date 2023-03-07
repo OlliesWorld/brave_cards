@@ -7,22 +7,11 @@ export default function Header() {
 
 
     return (
-        <div className="w-full grid grid-cols-1 justify-center items-center  text-center bg-blue-900">
-        
-            <div className="flex justify-center align-center gap-8 py-4">
-            <Link href="/gallery">
-                <a className=" text-2xl text-green-500 hover:underline ">Gallery</a>
-            </Link>
-            
-                <Link href="/">
-                    <a className="text-4xl text-blue-50 text-bold ">Brave_Cards</a>
-                </Link>
-                
-      
-            
-            <Link  href="/contact" >
-                <a className="text-2xl text-blue-50 hover:underline hover:text-2xl">Contact</a>
-                </Link>
+        <div className="bg-blue-900 text-center pt-8 md:grid md:grid-flow-row-dense md:grid-cols-3 md:grid-rows-2 ">
+         <Link href="/" className="m-auto col-span-2 text-4xl text-blue-50 text-bold ">Brave_Cards</Link>
+        <div className="col-span-1">
+            <Link href="/gallery" className="mr-4 text-2xl text-green-500 hover:underline ">Gallery</Link>
+            <Link  href="/contact" className="text-2xl text-green-500 hover:underline ">Contact</Link>
             </div>
         </div>
     )

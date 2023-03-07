@@ -23,14 +23,14 @@ const ContactForm = (
       <input id="email" type="email" name="email" required />
       <label htmlFor="message">Message *</label>
       <textarea className="h-48" id="message" name="message" required></textarea>
-      <button className="bg-blue-900 mt-8 py-4 hover:text-white hover:rounded-lg" type="submit">Submit</button>
+      <button className="bg-blue-900 text-green-500 mt-8 py-4 hover:text-white hover:rounded-lg" type="submit">Submit</button>
     </form>
   );
 
   return (
-    <div className="mt-4">
-      <h1 className="text-4xl text-center my-4">Let Us know who we should add!</h1>
-        <div className="w-1/3 m-auto mb-4 py-2 border-4 border-blue-900 rounded-lg  shadow-lg shadow-blue-500/50">
+    <div className="mt-4 mx-auto">
+      <h1 className="md:text-4xl text-center my-4 ">Let Us know who we should add!</h1>
+        <div className="mx-2 md:w-1/3 md:mx-auto mb-4 py-2 border-4 border-blue-900 rounded-lg  shadow-lg shadow-blue-500/50">
             {ContactForm}
         </div>
     </div>

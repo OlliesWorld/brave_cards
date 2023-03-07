@@ -15,12 +15,12 @@ const Home = ({cards, src}) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {cards.map((card) => (
             <Link key={card._id} href={`card/${card.slug.current}`} passHref >
-              <div  className="card  rounded-lg overflow-hidden shadow-lg mb-4 bg-white cursor-pointer">
+              <div  className="card  rounded-lg overflow-hidden shadow-lg mb-16 bg-white cursor-pointer">
                 <div className="front rounded-lg">
-                <div className="h-72">
+                <div className="">
                 <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" sizes="50vh"/>
                 </div>
-                <div className="relative w-12 h-12 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-16 ml-2">
+                <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-16 ml-2">
                   
                   {card.type}
                 
@@ -28,13 +28,13 @@ const Home = ({cards, src}) => {
               <div className="rounded-bl-lg rounded-br-lg  px-2 py-2 mt-4 bg-blue-900">
                 <div className="font-bold text-2xl mb-2 text-center text-blue-50">{card.alias}</div>
                 <div className="flex justify-center space-x-4">
-                  <div className='text-blue-50'>{card.power}</div>
+                  <div className='text-center text-blue-50'>{card.power}</div>
                   {/* <div className='text-blue-50'>{card.reign}</div> */}
                 </div>
               </div>
               </div>
               <div  className="back max-w-md rounded overflow-hidden shadow-lg mb-4 bg-white">
-              <div className="px-6  mt-4 bg-blue-900">
+              <div className="px-6 py-4 bg-blue-900">
                 <div className="font-bold text-2xl mb-2 text-center text-blue-50">{card.name}</div>
                 <div className="">
                   {/* <div className='text-blue-50'>Power: {card.power}</div> */}
