@@ -25,7 +25,7 @@ const Home = ({cards, src}) => {
     <> 
     <div className=" header my-4 text-center text-blue-900 font-extrabold">
           <h2 >These Women are</h2>
-          <h2 className="w-1/2 m-auto text-4xl uppercase">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
+          <h2 className="md:w-1/2 m-auto text-4xl uppercase">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
         <h4>Swipe for more!</h4> <p>or checkout the 
          <Link className='text-green-600' href="/gallery"> Gallery</Link></p>
         </div>
