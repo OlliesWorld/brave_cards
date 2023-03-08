@@ -21,7 +21,9 @@ const Home = ({cards, src}) => {
   const outOfFrame = (name) => {
       // console.log(name + ' left the screen!')
   }
+  // const sortedCard = cards.sort((a, b) => (a.alias.toLowerCase() < b.alias.toLowerCase()) ? -1 : ((b.alias.toLowerCase() > a.alias.toLowerCase()) ? 1 : 0));
   return (
+
     <> 
     <div className="header my-4 text-center text-blue-900 font-extrabold">
           <h2 >These Women are</h2>

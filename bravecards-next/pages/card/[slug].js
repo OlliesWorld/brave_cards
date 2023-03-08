@@ -22,7 +22,7 @@ const Card = ({
     // console.log(links.resourceLink1)
      return (
 
-        <div className="pb-4 bg-blue-50">
+        <div className="h-full my-12 pb-4 bg-blue-50">
           
         <div className="text-center">
             <h1 className="text-4xl">{name}</h1>
@@ -32,7 +32,7 @@ const Card = ({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className='col-span-2'>
             <div className="p-4">
-            <Image identifier="main-image" image={mainImage} alt="This is a Rebel Girl" />
+            <Image identifier="main-image" image={mainImage} alt={mainImage.caption} />
             
             </div>
             <div className=" mb-4 md:w-2/3 mx-4 md:m-auto pb-8">
@@ -42,9 +42,9 @@ const Card = ({
               </div>
               
             </div>
-              <div className="flex flex-col lg:flex-row justify-center gap-4 ">
-                   {images.map(( image, _key) => <Image  key={_key} identifier="images" image={image} width={500}
-        height={500} layout="intrinsic" alt={image.caption} />)}
+              <div className="md:w-2/3 m-auto flex flex-col lg:flex-row justify-center gap-4 ">
+                   {images.map(( image, _key) => <Image  key={_key} identifier="images" image={image} fill
+         alt={image.caption} />)}
               </div>
               
           </div>

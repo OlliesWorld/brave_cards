@@ -5,6 +5,7 @@ import Image from '../Components/Image'
 
 const Home = ({cards, src}) => {
   // console.log(cards)
+  const sortedCard = cards.sort((a, b) => (a.alias.toLowerCase() < b.alias.toLowerCase()) ? -1 : ((b.alias.toLowerCase() > a.alias.toLowerCase()) ? 1 : 0));
   return (
     <> 
     {cards && (
@@ -13,7 +14,7 @@ const Home = ({cards, src}) => {
        <h4 className="header m-auto text-center text-blue-900  w-3/4 pb-4 ">Click on a card to learn more!</h4>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
-          {cards.map((card) => (
+          {sortedCard.map((card) => (
             <Link key={card._id} href={`card/${card.slug.current}`} passHref >
               <div  className="card  rounded-lg overflow-hidden shadow-lg mb-16 bg-white cursor-pointer">
                 <div className="front rounded-lg">

@@ -3,9 +3,9 @@ import Footer from './Footer'
 
 export default function Layout({children}) {
     return (
-        <div >
+        <div>
         <Header />
-        <main className='md:h-screen' >{children}</main>
+        <main className='h-full' >{children}</main>
         <Footer />
         </div>
     )
