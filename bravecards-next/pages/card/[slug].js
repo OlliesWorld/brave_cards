@@ -63,10 +63,10 @@ const Card = ({
               </div>
             </div>
             <div className='grid'>
-            {links.resourceLink1 && <a href={links.resourceLink1} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #1</a>}
-              {links.resourceLink2 && <a href={links.resourceLink2} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #2</a>}
-             {links.resourceLink3 && <a href={links.resourceLink3} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #3</a>}
-              {links.resourceLink4 && <a href={links.resourceLink4} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #4</a>}
+            {links?.resourceLink1 && <a href={links.resourceLink1} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #1</a>}
+              {links?.resourceLink2 && <a href={links.resourceLink2} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #2</a>}
+             {links?.resourceLink3 && <a href={links.resourceLink3} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #3</a>}
+              {links?.resourceLink4 && <a href={links.resourceLink4} target="_blank" rel="noreferrer" className='mt-4'>Resource Link #4</a>}
               </div>
           </div>
         </section>
