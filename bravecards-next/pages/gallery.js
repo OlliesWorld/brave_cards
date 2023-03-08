@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from '../Components/Image'
 
 
-const Home = ({cards, src}) => {
+const Gallery = ({cards}) => {
   // console.log(cards)
   const sortedCard = cards.sort((a, b) => (a.alias.toLowerCase() < b.alias.toLowerCase()) ? -1 : ((b.alias.toLowerCase() > a.alias.toLowerCase()) ? 1 : 0));
   return (
@@ -27,9 +27,9 @@ const Home = ({cards, src}) => {
                 
                 </div >
               <div className="rounded-bl-lg rounded-br-lg  px-2 py-2 mt-4 bg-blue-900">
-                <div className="font-bold text-2xl mb-2 text-center text-blue-50">{card.alias}</div>
+                <div className="font-bold text-2xl text-center text-blue-50">{card.alias}</div>
                 <div className="flex justify-center space-x-4">
-                  <div className='text-center text-blue-50'>{card.power}</div>
+                  <div className='text-center text-blue-50 '>{card.power}</div>
                   {/* <div className='text-blue-50'>{card.reign}</div> */}
                 </div>
               </div>
@@ -75,4 +75,4 @@ export const getServerSideProps = async () => {
   }
 }
 
-export default Home
+export default Gallery

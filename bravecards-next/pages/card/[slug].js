@@ -42,7 +42,7 @@ const Card = ({
             </div>
               <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 mx-auto mb-4">
                    {images.map(( image, _key) => <Image blur  key={_key} identifier="images" image={image} 
-         alt={image.caption} />)}
+         alt='The amazing ${name}' />)}
               </div>
               
           </div>
