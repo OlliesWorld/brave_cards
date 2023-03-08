@@ -22,7 +22,7 @@ const Card = ({
     // console.log(links.resourceLink1)
      return (
 
-        <div className="h-full my-12 pb-4 bg-blue-50">
+        <div className="h-full mt-12 pb-4 bg-blue-50">
           
         <div className="text-center">
             <h1 className="text-4xl">{name}</h1>
@@ -31,7 +31,7 @@ const Card = ({
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className='col-span-2'>
-            <div className="p-4">
+            <div className="pl-24 w-1/2 m-auto">
             <Image identifier="main-image" image={mainImage} alt={mainImage.caption} />
             
             </div>
@@ -43,7 +43,7 @@ const Card = ({
               
             </div>
               <div className="md:w-2/3 m-auto flex flex-col lg:flex-row justify-center gap-4 ">
-                   {images.map(( image, _key) => <Image  key={_key} identifier="images" image={image} fill
+                   {images.map(( image, _key) => <Image  blur  key={_key} identifier="images" image={image} 
          alt={image.caption} />)}
               </div>
               
@@ -59,9 +59,9 @@ const Card = ({
               <div className="px-4 pb-2 text-blue-50  text-left ">
                 <h2 className="text-xl text-center mb-4 ">Favorite quotes: </h2>
                 <p className='text-lg lg:pl-4 mb-4' >💥 {quotes.quote1}</p>
-                <p className='text-xl lg:pl-4 mb-4 '>🌀 {quotes.quote2}</p>
-                <p className='text-xl lg:pl-4 mb-4'>🌈 {quotes.quote3}</p>
-                <p className='text-xl lg:pl-4 mb-4'> {quotes.quote4}</p>
+                <p className='text-xl lg:pl-4 mb-4 '>💥 {quotes.quote2}</p>
+                <p className='text-xl lg:pl-4 mb-4'>💥 {quotes.quote3}</p>
+                <p className='text-xl lg:pl-4 mb-4'>💥 {quotes.quote4}</p>
               </div>
             </div>
             <div className='grid'>
@@ -73,7 +73,7 @@ const Card = ({
           </div>
         </section>
         </div>
-        <div className="ml-4">Card made by: {creator?.name}</div>
+        <p className="ml-6">Card made by: {creator?.name}</p>
         
         </div>
     )

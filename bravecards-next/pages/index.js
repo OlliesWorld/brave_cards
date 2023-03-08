@@ -47,7 +47,7 @@ const Home = ({cards, src}) => {
                  ))}
         </div>
         </div>
-                 <div className='text-center'><p >fill out the <Link className='text-green-600' href="/contact">contact form </Link>to let me know who else should be featured!</p></div>
+                 <div className='text-center mb-8'><p >fill out the <Link className='text-green-600' href="/contact">contact form </Link>to let me know who else should be featured!</p></div>
     </>
   )
 }

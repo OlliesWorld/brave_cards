@@ -24,10 +24,10 @@ a {
 * {
   box-sizing: border-box;
 }
-.main-image img {
+/* .main-image img {
   height: 18rem;
  
-}
+} */
 
 .card{
   cursor: pointer;
