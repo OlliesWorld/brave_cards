@@ -42,7 +42,7 @@ const Card = ({
               </div>
               
             </div>
-              <div className="md:w-2/3 m-auto flex flex-col lg:flex-row justify-center gap-4 ">
+              <div className="md:w-2/3 mx-auto flex flex-col lg:flex-row justify-center gap-4 mb-4">
                    {images.map(( image, _key) => <Image  blur  key={_key} identifier="images" image={image} 
          alt={image.caption} />)}
               </div>
