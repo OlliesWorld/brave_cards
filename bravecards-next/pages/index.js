@@ -33,9 +33,9 @@ const Home = ({cards, src}) => {
           {cards.map((card) => (
            
             <TinderCard className='swipe mt-2 mx-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
-                            <div  className='card bg-blue-900  rounded-md shadow-lg'>
+                            <div  className='card bg-blue-900 -m-4 rounded-md shadow-lg'>
                                 <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
-                            <Image identifier="card-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
+                            <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
                             <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-14 ml-56">{card.type}</div >
                             <a key={card._id} href={`/card/${card.slug.current}`} className='text-blue-50 text-xl ml-6' >info here</a>
                     </div>
