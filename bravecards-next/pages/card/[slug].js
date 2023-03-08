@@ -1,5 +1,3 @@
-
-import Link from 'next/link'
 import Image from '../../Components/Image'
 import { sanityClient } from "../../sanity"
 
