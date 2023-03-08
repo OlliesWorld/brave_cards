@@ -1,72 +1,109 @@
-import { sanityClient } from '../sanity'
-import Image from '../Components/Image'
-import React, { useState } from 'react'
-import dynamic from "next/dynamic"
-import Link from 'next/link';
-const TinderCard = dynamic(() => import('react-tinder-card'), {
-  ssr: false
-});
+import { sanityClient } from "../sanity";
+import Link from "next/link";
+import Image from "../Components/Image";
 
-
-const Home = ({cards, src}) => {
+const Gallery = ({ cards }) => {
   // console.log(cards)
-  const [lastDirection, setLastDirection] = useState()
-
-  const swiped = (direction, nameToDelete) => {
-      console.log('removing: ' + nameToDelete)
-      setLastDirection(direction)
-  }
-
-  const outOfFrame = (name) => {
-      // console.log(name + ' left the screen!')
-  }
+  const sortedCard = cards.sort((a, b) =>
+    a.alias.toLowerCase() < b.alias.toLowerCase()
+      ? -1
+      : b.alias.toLowerCase() > a.alias.toLowerCase()
+      ? 1
+      : 0
+  );
   return (
-    <> 
-    <div className=" header my-4 text-center text-blue-900 font-extrabold">
-          <h2 >These Women are</h2>
-          <h2 className="md:w-1/2 m-auto text-4xl uppercase">inspiring, courageous, rebellious, kind, compassionate, fierce, and much more.</h2>
-        <h4>Swipe for more!</h4> <p>or checkout the 
-         <Link className='text-green-600' href="/gallery"> Gallery</Link></p>
-        </div>
-    <div className="flex justify-center align-center ">
-        <div className="card-container w-[19rem] h-[450px] m-auto">
-          {cards.map((card) => (
-           
-            <TinderCard className='swipe mt-2 mx-auto' key={card.id} onSwipe={(dir) => swiped(dir, card.name)} onCardLeftScreen={() => outOfFrame(card.name)}>
-                            <div  className='card bg-blue-900 -m-4 rounded-md shadow-lg'>
-                                <h3 className='text-blue-50 text-2xl text-center p-2'>{card.alias}</h3>
-                            <Image identifier="main-image" image={card.mainImage} alt="This is a Rebel Girl" className=" rounded-lg overflow-hidden" layout="responsive" />
-                            <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl -mt-14 ml-56">{card.type}</div >
-                            <a key={card._id} href={`/card/${card.slug.current}`} className='text-blue-50 text-xl ml-6' >info here</a>
+    <>
+      {cards && (
+        <div className="main  pt-4">
+          <div className="text-center mb-4">
+            <h2 className="text-4xl">
+              Women that embody my creed:
+              <br /> Live <em className="underline">Authentically</em>,{" "}
+              <em className="underline">Out Loud</em> and{" "}
+              <em className="underline">On Purpose</em>!
+            </h2>
+            <h3>
+              "Wake up every day and be exactly who you are" ~ Ariana Debose
+            </h3>
+          </div>
+          <h4 className="header m-auto text-center text-blue-900  w-3/4 pb-4 ">
+            Click on a card to learn more!
+          </h4>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
+            {sortedCard.map((card) => (
+              <Link key={card._id} href={`card/${card.slug.current}`} passHref>
+                <div className="card  rounded-lg overflow-hidden shadow-lg mb-16 bg-white cursor-pointer">
+                  <div className="front rounded-lg">
+                    <div className="relative">
+                      <Image
+                        identifier="card-image"
+                        image={card.mainImage}
+                        alt="This is a Rebel Girl"
+                        className=" rounded-lg overflow-hidden"
+                        layout="responsive"
+                        sizes="50vh"
+                      />
                     </div>
-                </TinderCard>
-                            
-                 ))}
+                    <div className="absolute  w-full rounded-bl-lg rounded-br-lg bottom-0  px-2 py-2  bg-blue-900">
+                    <div className="grid grid-cols-3">
+                      
+                      <h2 className="col-span-2 m-auto  font-bold w-full text-2xl text-center text-blue-50">
+                        {card.alias}
+                      </h2>
+                      <p className="relative w-14 h-14 bg-yellow-400 rounded-full flex justify-center items-center text-center text-sm p-5 shadow-xl ml-8  -mt-12">
+                      {card.type}
+                      </p>
+                      </div>
+                        <div className="m-auto text-center text-blue-50 ">
+                          {card.power}
+                        </div>
+                    </div>
+                        
+                  </div>
+                  <div className="back max-w-md rounded overflow-hidden shadow-lg mb-4 bg-white">
+                    <div className="px-6 py-4 bg-blue-900">
+                      <div className="font-bold text-2xl mb-2 text-center text-blue-50">
+                        {card.name}
+                      </div>
+                      <div className="">
+                        {/* <div className='text-blue-50'>Power: {card.power}</div> */}
+                        <div className="text-blue-50 text-xl">
+                          Reign: {card.reign}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 ">
+                      <span className="font-bold">My Why:</span> <p className="truncate">{card.theWhy}</p>
+                    <div className="mt-12 text-xl"><p>click card for more</p></div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-        </div>
-                 <p className='text-center'>fill out the <Link className='text-green-600' href="/contact">contact form </Link>to let me know who else should be featured!</p>
+      )}
     </>
-  )
-}
-
-
-export default Home
+  );
+};
 
 export const getServerSideProps = async () => {
-  const query = `*[ _type == "card"]`
-  const cards = await sanityClient.fetch(query)
+  const query = `*[ _type == "card"]`;
+  const cards = await sanityClient.fetch(query);
 
   if (!cards.length) {
     return {
       props: {
         cards: [],
       },
-    }
+    };
   } else {
     return {
       props: {
         cards,
       },
-    }
+    };
   }
-}
+};
+
+export default Gallery;
