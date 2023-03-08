@@ -23,7 +23,7 @@ const Gallery = ({ cards }) => {
               <em className="underline">On Purpose</em>!
             </h2>
             <h3>
-              "Wake up every day and be exactly who you are" ~ Ariana Debose
+            &quot;Wake up every day and be exactly who you are&quot; &#732; Ariana Debose
             </h3>
           </div>
           <h4 className="header m-auto text-center text-blue-900  w-3/4 pb-4 ">
