@@ -16,7 +16,7 @@ const Card = ({
         links,
         creator,
  }) => {
-    //  console.log(images.caption)
+    //  console.log(images)
     // console.log(links.resourceLink1)
      return (
 
@@ -30,7 +30,7 @@ const Card = ({
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className='col-span-2'>
             <div className="pl-24 w-1/2 m-auto">
-            <Image identifier="main-image" image={mainImage} alt={mainImage.caption} />
+            {/* <Image identifier="main-image" image={mainImage} alt={mainImage.caption} /> */}
             
             </div>
             <div className=" mb-4 md:w-2/3 mx-4 md:m-auto pb-8">
@@ -40,8 +40,8 @@ const Card = ({
               </div>
               
             </div>
-              <div className="md:w-2/3 mx-auto flex flex-col lg:flex-row justify-center gap-4 mb-4">
-                   {images.map(( image, _key) => <Image  blur  key={_key} identifier="images" image={image} 
+              <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 mx-auto mb-4">
+                   {images.map(( image, _key) => <Image blur  key={_key} identifier="images" image={image} 
          alt={image.caption} />)}
               </div>
               
@@ -91,13 +91,11 @@ export const getServerSideProps = async (pageContext) => {
         images,
         reign,
         links,
-      
         creator-> {
             _id,
             name,
             slug,
-            image
-        
+            image 
         }
       
     }`
