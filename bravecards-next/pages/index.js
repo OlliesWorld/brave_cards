@@ -29,7 +29,7 @@ const Gallery = ({ cards }) => {
           <h4 className="header m-auto text-center text-blue-900  w-3/4 pb-4 ">
             Click on a card to learn more!
           </h4>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center">
+          <div className="m-auto w-[87%] grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             {sortedCard.map((card) => (
               <Link key={card._id} href={`card/${card.slug.current}`} passHref>
                 <div className="card  rounded-lg overflow-hidden shadow-lg mb-16 bg-white cursor-pointer">
